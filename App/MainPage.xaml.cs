@@ -28,18 +28,24 @@ namespace App
             {
                 var lp = await res.Content.ReadAsStringAsync();
                 var resjson = JsonConvert.DeserializeObject<CepModel>(lp);
-                lb_cep.Text = resjson.cep;
-                lb_bairro.Text = resjson.bairro;
-                lb_logradouro.Text = resjson.logradouro;
-                lb_ddd.Text = resjson.ddd;
-                lb_uf.Text = resjson.uf;
-                lb_complemento.Text = resjson.complemento;
+
+                if (resjson.erro == true)
+                {
+                    await DisplayAlert("Alerta", "Cep Não Encontrado", "Ok");
+                }
+                else
+                {
+                    lb_cep.Text = $"Cep : {resjson.cep}";
+                    lb_bairro.Text = $"Bairro : {resjson.bairro}";
+                    lb_logradouro.Text = $"Logradouro : {resjson.logradouro}";
+                    lb_ddd.Text = $"DDD : {resjson.ddd}";
+                    lb_uf.Text = $"UF : {resjson.uf}";
+                }
             }
             else
             {
-               
-                
-                lb_cep.Text = "CEP Informado Errado";
+
+                await DisplayAlert("alerta","Cep Errado","Ok");
 
             }
 

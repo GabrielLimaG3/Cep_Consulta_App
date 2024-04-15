@@ -11,12 +11,11 @@
 
             <Entry x:Name="ety_cpe" Placeholder="Digite o CEP"/>
             <Button Clicked="OnCounterClicked" Text="Consulta CEP"/>
-            <Label x:Name="lb_cep"/>
-            <Label x:Name="lb_bairro"/>
-            <Label x:Name="lb_logradouro"/>
-            <Label x:Name="lb_ddd"/>
-            <Label x:Name="lb_uf"/>
-            <Label x:Name="lb_complemento"/>
+            <Label x:Name="lb_cep" Text="Cep : "/>
+            <Label x:Name="lb_bairro" Text="Bairro : "/>
+            <Label x:Name="lb_logradouro" Text="Logradouro : "/>
+            <Label x:Name="lb_ddd" Text="DDD : "/>
+            <Label x:Name="lb_uf" Text="UF : "/>
 
 
         </VerticalStackLayout>
